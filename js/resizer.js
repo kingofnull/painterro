@@ -24,7 +24,15 @@ export default class Resizer {
       const origH = this.main.size.h;
 
       const tmpData = this.main.canvas.toDataURL();
-
+      
+      //current dimensions
+      const oldW=this.main.size.w;
+      const oldH=this.main.size.h;
+      
+      //calc new width and height
+      this.newW=this.newW*oldW;
+      this.newH=this.newH*oldH;
+      
       this.main.resize(this.newW, this.newH);
 
       this.main.ctx.save();
